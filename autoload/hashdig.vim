@@ -34,7 +34,7 @@ let s:WIDTHMASK32=0xFFFFFFFF
 let s:SHA1BITS=32
 let s:SHA1BLOCKSIZE=512
 
-function Hashdig#sha1(inputText)
+function hashdig#sha1(inputText)
 " Purpose: sha1 digest
 " Args: input string
 " Returns: sha1 digest string
@@ -232,7 +232,7 @@ endfunction
 
 " Unit Tests
 """"""""""""
-function Hashdig#RunTests()
+function hashdig#RunTests()
 " Purpose: Run all unit tests
 " Returns: true if all tests pass
     let v:errors=[]
@@ -415,11 +415,11 @@ endfunction
 
 function s:UnitTest_sha1()
     call assert_equal("b7e23ec29af22b0b4e41da31e868d57226121c84",
-                     \Hashdig#sha1("hello, world"))
+                     \hashdig#sha1("hello, world"))
     call assert_equal("a9993e364706816aba3e25717850c26c9cd0d89d",
-                     \Hashdig#sha1("abc"))
+                     \hashdig#sha1("abc"))
     let l:utIn="abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"
     call assert_equal("84983e441c3bd26ebaae4aa1f95129e5e54670f1",
-                     \Hashdig#sha1(l:utIn))
+                     \hashdig#sha1(l:utIn))
 endfunction
 
