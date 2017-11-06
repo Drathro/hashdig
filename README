@@ -19,7 +19,7 @@ That works nicely.
 
 Usage
 =====
-Function hashdig#sha1(string) returns the 20-character sha1 hash of the string. For example:
+Function hashdig#sha1(string) returns the 40-character sha1 hash of the string. For example:
 
 :echo hashdig#sha1("hello, world")
 b7e23ec29af22b0b4e41da31e868d57226121c84
