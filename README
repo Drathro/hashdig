@@ -1,0 +1,41 @@
+Introduction
+============
+hashdig.vim provides a vim plugin to produce an sha1 message digest from a string.
+
+Dependencies
+===========
+hashdig currently has no known external or vim plugin dependencies. It has been tested on Vim 8.
+
+Installation
+============
+I haven't had the chance to test script installers yet, but I expect the most popular ones will work. I prefer extracting the download to your packpath (:help packages) under
+
++pack
+ +hashdig
+  +start
+   +hashdig
+
+That works nicely.
+
+Usage
+=====
+Function Hashdig#sha1(string) returns the 20-character sha1 hash of the string. For example:
+
+:echo Hashdig#sha1("hello, world")
+b7e23ec29af22b0b4e41da31e868d57226121c84
+    
+(F)AQ
+=====
+Q. Why?
+A. I wanted to learn vimscript by writing a plugin to upload word counts to a writing site, but the site uses sha1 as part of its web API. Instead of simply installing a command line sha1 app from the web, I found a vimscript that promised sha1, but it failed to produce the correct value. Obviously, I had to write my own.
+
+Q. Will hashdig sha1 work with strings with multibyte characters?
+A. If a mutlibyte sha1 standard exists, I'm not aware of it. The current implementation of hashdig sha1 will use only the lowest byte of a multibyte character, and that sounds wrong to me. Maybe a project for the future?
+
+Q. Hasn't sha1 been proven to be insecure?
+A. You bet! But for a while yet, there will be non-critical encryption uses for it.
+
+Contributing
+============
+Want to test, improve, request, or add other hash algorithms? Great! I'm open to ideas. The ideal is to have algorithms with no dependencies and that work on both 32 and 64 bit systems, but that might not always be possible.
+
